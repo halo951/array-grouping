@@ -1,10 +1,17 @@
-## array group
+## array group by function.
 
 ### install
 
 > 1. add module `yarn add array-group-by` or `npm install array-group-by --save`
 
-> 2. use `import { GroupBy } from "array-group-by";` and `GroupBy([your array],(a:T,b:T):boolean => { return a == b; // diff func. })`
+> 2. use `import { GroupBy } from "array-group-by";`
+
+```
+GroupBy([your array],(a:T,b:T):boolean => { return a == b; // diff func. })
+
+GroupTo([your array],(a:T):boolean => { // check current item in result index. })
+
+```
 
 > 3. import to Array.phototype `import { polyfill } from "array-group-by"` and `polyfill(); // exec`
 
@@ -28,6 +35,34 @@
         val:number;
     }>> = GroupBy(arr, (a,b) => {
         return a.code == b.code;
+    });
+
+    // print result
+
+    console.log( `result:` , result );
+
+
+```
+
+#### 1. use GroupTo function.
+
+```
+    // import func
+    import { GroupTo } from "array-group-by";
+
+    // use
+    // query:  group arr by code.
+    let arr: Array<{
+    code: number;
+    val: number;
+    }> = [{ code: 1, val: 1 }, { code: 2, val: 2 }, { code: 1, val: 3 }];
+
+    let result : Array<Array<{
+        code:number;
+        val:number;
+    }>> = GroupTo(arr, (a) => {
+        if(a.code==1) return 0;
+        else return 1;
     });
 
     // print result
