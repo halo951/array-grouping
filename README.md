@@ -15,7 +15,7 @@ GroupTo([your array],(a:T):boolean => { // check current item in result index. }
 
 > 3. import to Array.phototype `import { polyfill } from "array-group-by"` and `polyfill(); // exec`
 
-### use demo （详细使用例子参考 ）[link:./src/index.test.ts]
+### use demo （详细使用例子参考 ）[link:https://github.com/a951055/array-grouping/blob/master/src/index.test.ts]
 
 #### 1. use GroupBy function.
 
