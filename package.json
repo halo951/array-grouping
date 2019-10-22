@@ -1,0 +1,10 @@
+{
+  "name": "array-group-by",
+  "version": "1.0.4",
+  "description": "TS array grou by function.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "https://github.com/a951055/array-group-by",
+  "author": "Halo",
+  "license": "MIT"
+}
