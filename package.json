@@ -1,10 +1,10 @@
 {
-  "name": "array-group-by",
-  "version": "1.0.4",
-  "description": "TS array grou by function.",
+  "name": "array-grouping",
+  "version": "1.0.1",
+  "description": "array grouping function by TS. 这个名字被迫这样,因为array-group被占用了...",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "repository": "https://github.com/a951055/array-group-by",
+  "repository": "https://github.com/a951055/array-grouping",
   "author": "Halo",
   "license": "MIT",
   "scripts": {
