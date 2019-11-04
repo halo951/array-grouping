@@ -7,18 +7,9 @@
  * @param isSorted if origin array is sorted,then you can input isSorted is true. this speeds up grouping,but there are risks in this operation.
  *
  */
-export const GroupBy = <T>(
-  array: Array<T>,
-  compute: (a: T, b: T) => boolean,
-  isSorted?: boolean
-): Array<Array<T>> => {
+export const GroupBy = <T>(array: Array<T>, compute: (a: T, b: T) => boolean, isSorted?: boolean): Array<Array<T>> => {
   let r = new Array<Array<T>>(0);
-  let db = (
-    r: Array<Array<T>>,
-    n: T,
-    compute: (a: T, b: T) => boolean,
-    index: number = 0
-  ): number => {
+  let db = (r: Array<Array<T>>, n: T, compute: (a: T, b: T) => boolean, index: number = 0): number => {
     if (r[index] && compute(n, r[index][0])) return index;
     else if (r.length > index) return db(r, n, compute, index + 1);
     else return -1;
@@ -49,10 +40,7 @@ export const GroupBy = <T>(
  * @version 1.0.1
  * @returns 整理过的数组
  */
-export const GroupTo = <T>(
-  array: Array<T>,
-  computeIndex: (a: T) => number
-): Array<Array<T>> => {
+export const GroupTo = <T>(array: Array<T>, computeIndex: (a: T) => number): Array<Array<T>> => {
   let r = new Array<Array<T>>(0);
   for (let n = 0, groupIndex = 0, a: T = null, m = 0; n < array.length; n++) {
     a = array[n];
