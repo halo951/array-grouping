@@ -1,6 +1,6 @@
 {
   "name": "array-grouping",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "array grouping function by TS. 这个名字被迫这样,因为array-group被占用了...",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
