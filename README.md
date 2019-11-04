@@ -20,84 +20,55 @@ GroupTo([your array],(a:T):boolean => { // check current item in result index. }
 #### 1. use GroupBy function.
 
 ```
-    // import func
-    import { GroupBy } from "array-group-by";
+ import { GroupBy, GroupTo } from "array-grouping";
 
-    // use
-    // query:  group arr by code.
-    let arr: Array<{
-    code: number;
-    val: number;
-    }> = [{ code: 1, val: 1 }, { code: 2, val: 2 }, { code: 1, val: 3 }];
+// example - 1 - grouping array
 
-    let result : Array<Array<{
-        code:number;
-        val:number;
-    }>> = GroupBy(arr, (a,b) => {
-        return a.code == b.code;
-    });
-
-    // print result
-
-    console.log( `result:` , result );
-
+let arr1 = new Array<number>(20).fill(0).map(n => Math.ceil(Math.random() * 100));
+// exec
+let result = GroupBy(arr1, (a, b) => a == b);
+// print
+console.log(result);
 
 ```
 
 #### 2. use GroupTo function.
 
 ```
-    // import func
-    import { GroupTo } from "array-group-by";
 
-    // use
-    // query:  group arr by code.
-    let arr: Array<{
-    code: number;
-    val: number;
-    }> = [{ code: 1, val: 1 }, { code: 2, val: 2 }, { code: 1, val: 3 }];
+import { GroupBy, GroupTo } from "array-grouping";
 
-    let result : Array<Array<{
-        code:number;
-        val:number;
-    }>> = GroupTo(arr, (a) => {
-        if(a.code==1) return 0;
-        else return 1;
-    });
+// example - 4 - group the array to the specified location
 
-    // print result
+let arr4 = new Array<number>(20).fill(0).map(n => Math.ceil(Math.random() * 100));
+// exec
+let result = GroupTo(arr4, a => {
+  if (a % 10 == 0) return 0;
+  else if (a % 5 == 0) return 1;
+  else return 2;
+});
 
-    console.log( `result:` , result );
+// print
+console.log(result);
 
 
 ```
 
-#### 3. use Array.phototype.groupBy (暂时未实现)[手动黑脸]
+#### 3. use Array.phototype.groupBy or use Array.phototype.groupTo - need to introduce polyfill
 
 ```
-    // import polyfill to global entry function.
-    import { polyfill } from "array-group-by";
 
-    // * if naming conflicts, use import { polyfill as customPolyfill } from "array-group-by";
-
-    // execut polyfill
-    polyfill();
-
-    // use
-    // query:  group arr by code.
-    let arr: any = [{ code: 1, val: 1 }, { code: 2, val: 2 }, { code: 1, val: 3 }];
-
-    let result: Array<
-    Array<{
-        code: number;
-        val: number;
-    }>
-    > = arr.groupBy((a, b) => {
-    return a.code == b.code;
-    });
-
-    // print result
-    console.log(`result:`, result);
+// example - 5 - use polyfill import grouping function to Array.prototype
+import "array-grouping/src/polyfill"; // useing in ts
+import "array-grouping/dist/polyfill"; // useing in js
+// test arr
+let arr5 = [1, 2, 3, 3, 5];
+// exec
+arr5.groupBy((a, b) => a == b);
+arr5.groupTo(a => {
+  if (a < 3) return 0;
+  else return 1;
+});
 
 
 ```
