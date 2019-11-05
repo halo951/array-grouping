@@ -29,14 +29,3 @@ GroupTo(arr4, a => {
   else if (a % 5 == 0) return 1;
   else return 2;
 });
-
-// example - 5 - use polyfill import grouping function to Array.prototype
-import "./polyfill";
-// test arr
-let arr5 = [1, 2, 3, 3, 5];
-// exec
-arr5.groupBy((a, b) => a == b);
-arr5.groupTo(a => {
-  if (a < 3) return 0;
-  else return 1;
-});

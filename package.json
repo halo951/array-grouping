@@ -7,6 +7,12 @@
   "repository": "https://github.com/a951055/array-grouping",
   "author": "Halo",
   "license": "MIT",
+  "keywords": [
+    "array",
+    "group by",
+    "group to",
+    "数组分组方法"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",

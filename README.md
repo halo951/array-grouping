@@ -1,26 +1,27 @@
-## array group by function.
+## 数组分组函数(array groupBy)
 
 ### install
 
-> 1. add module `yarn add array-group-by` or `npm install array-group-by --save`
+> 1. `yarn add array-group-by` or `npm install array-group-by --save`
 
-> 2. use `import { GroupBy } from "array-group-by";`
+### use
 
 ```
-GroupBy([your array],(a:T,b:T):boolean => { return a == b; // diff func. })
+// import for commonJs
+import { GroupBy } from "array-grouping";
 
+// use
+GroupBy([your array],(a:T,b:T):boolean => { return a == b; // diff func. })
 GroupTo([your array],(a:T):boolean => { // check current item in result index. })
 
 ```
 
-> 3. import to Array.phototype `import { polyfill } from "array-group-by"` and `polyfill(); // exec`
-
 ### use demo （详细使用例子参考 ）[link:https://github.com/a951055/array-grouping/blob/master/src/index.test.ts]
 
-#### 1. use GroupBy function.
+#### 1. use GroupBy demo.
 
 ```
- import { GroupBy, GroupTo } from "array-grouping";
+ import { GroupBy } from "array-grouping";
 
 // example - 1 - grouping array
 
@@ -32,11 +33,11 @@ console.log(result);
 
 ```
 
-#### 2. use GroupTo function.
+#### 2. use GroupTo demo.
 
 ```
 
-import { GroupBy, GroupTo } from "array-grouping";
+import {  GroupTo } from "array-grouping";
 
 // example - 4 - group the array to the specified location
 
@@ -50,25 +51,6 @@ let result = GroupTo(arr4, a => {
 
 // print
 console.log(result);
-
-
-```
-
-#### 3. use Array.phototype.groupBy or use Array.phototype.groupTo - need to introduce polyfill
-
-```
-
-// example - 5 - use polyfill import grouping function to Array.prototype
-import "array-grouping/src/polyfill"; // useing in ts
-import "array-grouping/dist/polyfill"; // useing in js
-// test arr
-let arr5 = [1, 2, 3, 3, 5];
-// exec
-arr5.groupBy((a, b) => a == b);
-arr5.groupTo(a => {
-  if (a < 3) return 0;
-  else return 1;
-});
 
 
 ```

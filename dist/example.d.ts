@@ -1,1 +1,1 @@
-import "./polyfill";
+export {};
