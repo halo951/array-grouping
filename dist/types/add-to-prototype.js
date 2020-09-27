@@ -7,7 +7,9 @@ const group_by_1 = require("../lib/group-by");
  * @author Libin
  * @date 2020-09-27 16:44
  */
-Array.prototype.groupBy = function (compute, isSorted) {
-    return group_by_1.GroupBy(this, compute, isSorted);
+exports.addToProperty = () => {
+    Array.prototype.groupBy = function (compute, isSorted) {
+        return group_by_1.GroupBy(this, compute, isSorted);
+    };
 };
 //# sourceMappingURL=add-to-prototype.js.map

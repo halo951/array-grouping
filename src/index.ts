@@ -1,2 +1,2 @@
 export { GroupBy } from './lib/group-by'
-export { AddToProperty } from './types/add-to-prototype'
+export { addToProperty } from './types/add-to-prototype'

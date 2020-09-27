@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupBy = void 0;
 var group_by_1 = require("./lib/group-by");
-Object.defineProperty(exports, "GroupBy", { enumerable: true, get: function () { return group_by_1.GroupBy; } });
+exports.GroupBy = group_by_1.GroupBy;
+var add_to_prototype_1 = require("./types/add-to-prototype");
+exports.addToProperty = add_to_prototype_1.addToProperty;
 //# sourceMappingURL=index.js.map

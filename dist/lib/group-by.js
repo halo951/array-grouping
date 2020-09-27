@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupBy = void 0;
 /**
  * 数组分组函数(根据指定条件分组) array grouy by .
  * @description array extand function
