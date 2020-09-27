@@ -6,6 +6,8 @@ import { GroupBy } from '../lib/group-by'
  * @author Libin
  * @date 2020-09-27 16:44
  */
-Array.prototype.groupBy = function <T>(compute: (a: T, b: T) => boolean, isSorted?: boolean): Array<Array<T>> {
-    return GroupBy(this, compute, isSorted)
+export const AddToProperty = () => {
+    Array.prototype.groupBy = function <T>(compute: (a: T, b: T) => boolean, isSorted?: boolean): Array<Array<T>> {
+        return GroupBy(this, compute, isSorted)
+    }
 }
